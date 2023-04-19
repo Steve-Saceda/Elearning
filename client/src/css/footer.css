@@ -1,0 +1,43 @@
+:root {
+  --mainColor: rgb(162, 3, 3);
+  --hoverColor: rgb(237, 72, 72);
+  --backgroundColor: #f1f8fc;
+  --darkOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919191;
+  --lightTwo: #aaa;
+
+}
+
+.footer {
+  text-align: center;
+  margin-top: 3%;
+  border-top: .5px solid black;
+}
+.container-footer{
+  position: relative;
+  max-width: 500rem;
+  width: 100%;
+  padding: 1rem 10rem;
+  z-index: 10;
+  background-color: var(--backgroundColor);
+}
+.socmed{
+  margin-top: 2%;
+}
+
+.footer li {
+  margin: 20px 10px;
+  cursor: pointer;
+}
+
+.footer p {
+  padding-left: 5%;
+  font-size: 1rem;
+}
+
+@media all and (max-width: 600px) {
+  .footer p {
+    padding-left: 10%;
+  }
+}

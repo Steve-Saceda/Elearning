@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Cedarville+Cursive&family=Lobster&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --mainColor: rgb(162, 3, 3);
+  --hoverColor: rgb(237, 72, 72);
+  --backgroundColor: #f1f8fc;
+  --darkOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919191;
+  --lightTwo: #aaa;
+
+}
+
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.big-wrapper {
+  padding: 0rem 0rem;
+  width: 100%;
+  min-height: 120vh;
+  overflow: hidden;
+  background-color: var(--backgroundColor);
+}
+
+.container-nav {
+  position: relative;
+  max-width: 500rem;
+  width: 100%;
+  padding: 1rem 10rem;
+  z-index: 10;
+  background-color: var(--backgroundColor);
+}
+
+header .container-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logo h3 {
+  color: red;
+}
+
+.logo h2 {
+  font-family: "Lobster", cursive;
+}
+
+.logo img {
+  width: 25px;
+  margin-right: 0.6rem;
+
+}
+
+.logo:hover {
+  transform: scale(.8);
+}
+
+
+.links a {
+  color: var(--lightOne);
+  margin-left: 4.5rem;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  color: var(--hoverColor);
+  transform: scale(1.2);
+}
+
+.showcase-area {
+  margin-top: 5%;
+  position: relative;
+  display: inline-block;
+  height: 100vh;
+  width: 100%;
+
+  /* background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); 
+  background-size: cover;*/
+}
+
+.big-title {
+  text-align: center;
+  font-size: 100%;
+  /* margin-bottom: -10rem;*/
+}
+
+.big-title img{
+  width: 40%;
+  margin-bottom: -10rem;
+}
+
+.big-title h1 {
+  font-family: "Lobster", cursive;
+  color: black;
+  padding-top: 10rem;
+  padding-bottom: 3rem;
+}
+
+.text {
+  margin: 0 auto;
+  padding-bottom: 5rem;
+  width: 75%;
+  font-size: 17px;
+  text-align: justify;
+  justify-content: center;
+  /*margin-bottom: -1rem;*/
+
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  font-size: 20px;
+
+
+}
+
+.btn {
+  background-color: var(--mainColor);
+  padding: 0.9rem 1.9rem;
+  border-radius: 0px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--hoverColor);
+  transform: scale(1.1);
+}
+
+.btn-color {
+  background-color: rgb(207, 178, 10);
+}
+
+.btn-color:hover {
+  background-color: rgb(220, 203, 108);
+  transform: scale(1.1);
+}
+
+.feat {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.feat .box {
+  padding: 8rem;
+  transition: 0.3s;
+
+}
+
+.box img {
+  width: 70%;
+}
+
+.box:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 992px){
+  .big-title img{
+    width: 50%;
+  }
+  .logo{
+    margin-left: 30%;
+  }
+  .links{
+    display: none;
+  }
+  .feat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40%;
+  }
+  .feat .box{
+    padding: 10%;
+  }
+  
+  .box img {
+    height: 50%;
+    width: 50%;
+  }
+  
+  .box:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 400px){
+  .showcase-area {
+    height: 120vh;
+  }
+  .big-title img{
+    width: 50%;
+  }
+  .logo{
+    margin-left: 30%;
+  }
+  .links{
+    display: none;
+  }
+  .feat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50%;
+    
+  }
+  .feat .box{
+    padding: 5%;
+  }
+  .box img {
+    height: 50%;
+    width: 70%;
+  }
+  
+  .box:hover {
+    transform: scale(1.1);
+  }
+}
+
+.fa-language {
+  color: var(--lightOne);
+}
+
+.Title {
+  text-align: center;
+  font-family: cursive;
+  font-size: 50px;
+  border-bottom: 5px solid black;
+}
+
+.Title a {
+  text-decoration: none;
+  color: black;
+  text-shadow: 2px 2px yellow;
+}
+
+ul {
+  text-align: center;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+ul li {
+  display: inline;
+  padding-left: 5rem;
+  padding-right: 10rem;
+}
+
+ul li a {
+  text-decoration: none;
+  margin-top: 100px;
+  color: black;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+ul li a:hover {
+  font-size: 30px;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+
+ul li a:active {
+  font-size: 30px;
+}
+
+.home {
+  height: 500px;
+  width: auto;
+  background-image: url(https://img.freepik.com/free-vector/school-building-educational-institution-college_107791-1051.jpg?w=2000g);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+
+}
