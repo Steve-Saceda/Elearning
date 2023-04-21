@@ -40,7 +40,7 @@ export default function AdminUserRecords() {
               return () => clearInterval(interval);
         }
         
-    }, [!userRecords]);
+    }, );
 
     const renderDetailsButton = (params) => {
         return (
@@ -82,7 +82,7 @@ export default function AdminUserRecords() {
                     color="secondary"
                     size="small"
                     style={{ marginLeft: 16 }}
-                    onClick={() => toggleModal2(params.row)}
+                    onClick={() => handleReset(params.row)}
                 >
                     Reset
                 </Button>
@@ -208,12 +208,14 @@ export default function AdminUserRecords() {
         setFlag(!flag);
     };
 
-    const handleReset = () => {
+    const handleReset = (row) => {
+        // alert(row.lastname)
+        const id = row.id;
+        const lastname = row.lastname;
+        const email = row.email;
         Axios.put("http://localhost:5000/api/admin/resetPW_records", {
             id: id,
-            firstname: firstname,
             lastname: lastname,
-            gender: gender,
             email: email,
         })
             .then((response) => {
@@ -222,9 +224,8 @@ export default function AdminUserRecords() {
             })
             .catch((error) => {
                 console.log(error);
-                alert(error);
+                alert(error+id+lastname+email);
             });
-        alert("Password hass been reset");
     };
 
     const reset = () => {
@@ -242,7 +243,6 @@ export default function AdminUserRecords() {
             Axios.post("http://localhost:5000/api/admin/create_records", {
                 firstname: firstname,
                 lastname: lastname,
-                password: password,
                 gender: gender,
                 email: email,
                 userType: userType,
@@ -272,15 +272,15 @@ export default function AdminUserRecords() {
     const [firstname, setFirstName] = React.useState('');
     const [lastname, setLastName] = React.useState('');
     const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
-    const [password2, setPassword2] = React.useState('');
+    // const [password, setPassword] = React.useState('');
+    // const [password2, setPassword2] = React.useState('');
     const [gender, setGender] = React.useState('');
     const [userType, setUserType] = React.useState('');
 
     const [modal, setModal] = React.useState(false);
     const [modal2, setModal2] = React.useState(false);
     const [nextModal, setNextModal] = React.useState(false);
-    const [nextModal2, setNextModal2] = React.useState(false);
+    // const [nextModal2, setNextModal2] = React.useState(false);
 
     Axios.defaults.withCredentials = true;
 
@@ -313,9 +313,9 @@ export default function AdminUserRecords() {
 
     }
 
-    const toggleNextModal2 = () => {
-        setNextModal2(!nextModal2);
-    }
+    // const toggleNextModal2 = () => {
+    //     setNextModal2(!nextModal2);
+    // }
 
     return (
         <>
@@ -444,7 +444,7 @@ export default function AdminUserRecords() {
             {modal2 && (
                 <div className='modal'>
                     <div className="modal-content">
-                        <div className="modal-wrap" style={nextModal2 === true ? { display: 'none' } : null}>
+                        <div className="modal-wrap">
                             <div className='createAcc-tf'>
                                 <h2>Create Account</h2>
                                 <TextField required

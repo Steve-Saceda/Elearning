@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: ["http://localhost:3000"],
-    methods: ["GET", "POST", "DELETE"],
+    methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
 );
@@ -368,14 +368,15 @@ app.put("/api/admin/resetPW_records", (req, res) => {
   bcrypt.hash(password, saltRounds, (err, hash) => {
     if (err) {
       console.log(err);
+      alert(err);
     }
 
     const statement = "UPDATE user SET user.password = ? WHERE user.id = ? AND user.email = ?";
-    database.query(statement, [password, the_id, email], (err, result) => {
+    database.query(statement, [hash, the_id, email], (err, result) => {
       if (err) {
         res.send({ message: err });
       } else {
-        res.send({ message: "Successfully Updated!" });
+        res.send({ message: "Password has been reset!" });
       }
     });
   });
