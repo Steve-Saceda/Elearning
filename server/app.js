@@ -382,11 +382,95 @@ app.put("/api/admin/resetPW_records", (req, res) => {
   });
 });
 
+app.get("/api/admin/total_users_data", (req, res) => {
+
+  const statement = "SELECT COUNT(*) AS num_users FROM user";
+  database.query(statement, (err, result) => {
+    if (err) {
+      res.send({ message: err })
+    }
+    if (result.length > 0) {
+      res.send({ result: result[0].num_users });
+      console.log(result);
+    } else {
+      res.send({ message: "Record not found" });
+    }
+  });
+
+});
+
+app.get("/api/admin/reg_users_data", (req, res) => {
+
+  const statement = "SELECT COUNT(date_registered) AS reg_users FROM user WHERE kindofuser = 'student'";
+  database.query(statement, (err, result) => {
+    if (err) {
+      res.send({ message: err })
+    }
+    if (result.length > 0) {
+      res.send({ result: result[0].reg_users });
+      console.log(result);
+    } else {
+      res.send({ message: "Record not found" });
+    }
+  });
+
+});
+
+app.get("/api/admin/enrolled_users_data", (req, res) => {
+
+  const statement = "SELECT COUNT(date_enrolled) AS enrolled_users FROM tb_enroll";
+  database.query(statement, (err, result) => {
+    if (err) {
+      res.send({ message: err })
+    }
+    if (result.length > 0) {
+      res.send({ result: result[0].enrolled_users });
+      console.log(result);
+    } else {
+      res.send({ message: "Record not found" });
+    }
+  });
+
+});
+
+app.get("/api/admin/users_rate_data", (req, res) => {
+
+  const statement = "SELECT ROUND(AVG(rate), 2) as avg_rate FROM tb_rate";
+  database.query(statement, (err, result) => {
+    if (err) {
+      res.send({ message: err })
+    }
+    if (result.length > 0) {
+      res.send({ result: result[0].avg_rate });
+      console.log(result);
+    } else {
+      res.send({ message: "Record not found" });
+    }
+  });
+
+});
 
 app.get("/api/admin/pie_data", (req, res) => {
 
   const statement = "SELECT user.kindofuser, COUNT(*) AS student_count FROM profile JOIN user ON profile.user_id = user.id WHERE user.kindofuser IN ('student', 'teacher') GROUP BY  user.kindofuser";
-  database.query(statement, userId, (err, result) => {
+  database.query(statement, (err, result) => {
+    if (err) {
+      res.send({ message: err })
+    }
+    if (result.length > 0) {
+      res.send({ result: result });
+      console.log(result);
+    } else {
+      res.send({ message: "Record not found" });
+    }
+  });
+
+});
+
+app.get("/api/admin/linegraph_data", (req, res) => {
+
+  const statement = "SELECT MONTHNAME(date_registered) AS month, COUNT(*) AS num_users FROM user GROUP BY MONTH(date_registered)";
+  database.query(statement, (err, result) => {
     if (err) {
       res.send({ message: err })
     }
