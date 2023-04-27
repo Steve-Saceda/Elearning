@@ -5,7 +5,7 @@ import Auth from "./Auth";
 export default function Authentication() {
   return (
     <div className="container-auth">
-      <Nav display="none" margin="41%"/>
+      <Nav display="none" margin="34%"/>
       <Auth isRegistered />
     </div>
   );

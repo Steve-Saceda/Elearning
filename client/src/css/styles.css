@@ -12,16 +12,11 @@
 }
 
 
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: "Poppins", sans-serif;
 }
 
@@ -78,6 +73,10 @@ header .container-nav {
   transform: scale(.8);
 }
 
+.links{
+  margin-right: 50vh;
+}
+
 
 .links a {
   color: var(--lightOne);
@@ -95,7 +94,7 @@ header .container-nav {
   margin-top: 5%;
   position: relative;
   display: inline-block;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
 
   /* background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); 
@@ -206,7 +205,7 @@ header .container-nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 40%;
+    margin-top: 70%;
   }
   .feat .box{
     padding: 10%;
