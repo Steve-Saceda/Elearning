@@ -17,7 +17,7 @@ export default function Gameslist() {
                             Game Pic
                         </div>
                         <div>
-                        <Button variant="contained" onClick={() => {navigate('/games')}}>
+                        <Button variant="contained" onClick={() => {navigate('/games/game1')}}>
                           PLAY GAME
                         </Button>
                         </div>

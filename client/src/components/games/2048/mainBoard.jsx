@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import '../styles/styles.css';
+import React, {Component} from 'react';
+import '../../../css/games/2048/styles.css';
 import TileView from './tileView';
 import Cell from './cell';
 import {EndGame} from './endGame';

@@ -11,7 +11,7 @@ export const EndGame = ({board, onRestart}) => {
         return null;
     }
     return (
-        <div className='overlay'>
+        <div className='overlay6'>
             <p className='message'>{contents}</p>
             <button className="tryAgain" onClick={onRestart} onTouchEnd={onRestart}>Try again</button>
         </div>

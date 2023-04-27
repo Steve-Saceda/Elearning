@@ -1,19 +1,9 @@
-body {
+#boardDiv{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  font-family: "Arial", sans-serif;
-  font-size: 21px;
-  height: 100vh;
 }
-.text {
-  order: 2;
-  padding-top: 40px;
-  width: 440px;
-  font-weight: bold;
-}
+
 .board {
   order: 1;
   width: 440px;
@@ -23,6 +13,7 @@ body {
   border-radius: 7px;
   outline: none;
   position: relative;
+  margin-top: 10%;
 }
 .board .cell,
 .tile {
@@ -105,7 +96,7 @@ body {
   display: inline;
 }
 .tile.new,
-.overlay {
+.overlay6 {
   animation-duration: 0.2s;
   animation-name: newTile;
   animation-fill-mode: forwards;
@@ -120,7 +111,7 @@ body {
     transform: scale(1);
   }
 }
-.overlay {
+.overlay6 {
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -147,7 +138,7 @@ body {
   border: none;
   border-radius: 5px;
 }
-.overlay .message {
+.overlay6 .message {
   color: #666;
 }
 
